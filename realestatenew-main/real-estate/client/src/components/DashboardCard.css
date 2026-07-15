@@ -1,0 +1,94 @@
+.db-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+  min-height: 135px;
+}
+
+.db-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.db-card-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.db-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.db-card-title {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #64748b; /* text-secondary */
+}
+
+.db-card-value {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #0f172a; /* text-primary */
+  line-height: 1.2;
+}
+
+.db-card-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Icon Variants */
+.icon-blue {
+  background-color: rgba(0, 102, 204, 0.08);
+  color: #0066cc;
+  border: 1px solid rgba(0, 102, 204, 0.12);
+}
+
+.icon-green {
+  background-color: rgba(30, 126, 52, 0.08);
+  color: #1e7e34;
+  border: 1px solid rgba(30, 126, 52, 0.12);
+}
+
+.icon-orange {
+  background-color: rgba(217, 119, 6, 0.08);
+  color: #d97706;
+  border: 1px solid rgba(217, 119, 6, 0.12);
+}
+
+.icon-purple {
+  background-color: rgba(139, 92, 246, 0.08);
+  color: #8b5cf6;
+  border: 1px solid rgba(139, 92, 246, 0.12);
+}
+
+.db-card-footer {
+  border-top: 1px solid #f1f5f9;
+  padding-top: 0.65rem;
+}
+
+.db-card-link {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #0066cc;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.db-card-link:hover {
+  text-decoration: underline;
+}

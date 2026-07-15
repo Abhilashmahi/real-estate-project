@@ -1,0 +1,81 @@
+.customer-sidebar {
+  width: 260px;
+  background-color: #0c1e35;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.customer-sidebar .sidebar-brand {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.customer-sidebar .logo-icon {
+  color: var(--color-primary);
+}
+
+.customer-sidebar .sidebar-nav {
+  flex: 1;
+  padding: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.customer-sidebar .sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.8rem 1.5rem;
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.925rem;
+  font-weight: 500;
+  transition: var(--transition-fast);
+}
+
+.customer-sidebar .sidebar-link:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+}
+
+.customer-sidebar .sidebar-link.active {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.customer-sidebar .sidebar-footer {
+  padding: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.customer-sidebar .sidebar-logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.6rem 0;
+  background: none;
+  border: none;
+  color: #ef4444;
+  font-family: inherit;
+  font-size: 0.925rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.customer-sidebar .sidebar-logout-btn:hover {
+  color: #f87171;
+}
