@@ -9,7 +9,7 @@
     "dev": "nodemon src/server.ts",
     "prisma:generate": "node ./node_modules/prisma/build/index.js generate",
     "prisma:push": "node ./node_modules/prisma/build/index.js db push",
-    "prisma:seed": "npx ts-node src/seed.ts"
+    "prisma:seed": "node ./node_modules/ts-node/dist/bin.js src/seed.ts"
   },
   "dependencies": {
     "@prisma/client": "^5.15.0",
