@@ -8,7 +8,7 @@ export default function CustomerWishlist() {
 
   const fetchWishlist = async () => {
     try {
-      const response = await fetch('http://192.168.1.5:5000/api/wishlist', {
+      const response = await fetch('https://real-estate-backend-9qqo.onrender.com/api/wishlist', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (response.ok) {
@@ -29,7 +29,7 @@ export default function CustomerWishlist() {
   const handleRemove = async (propertyId: number) => {
     if (!window.confirm('Are you sure you want to remove this property from your wishlist?')) return;
     try {
-      const response = await fetch(`http://192.168.1.5:5000/api/wishlist/${propertyId}`, {
+      const response = await fetch(`https://real-estate-backend-9qqo.onrender.com/api/wishlist/${propertyId}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });

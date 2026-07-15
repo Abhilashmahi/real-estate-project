@@ -24,10 +24,10 @@ export default function CustomerDashboard() {
   useEffect(() => {
     const headers = { 'Authorization': `Bearer ${token}` };
     Promise.all([
-      fetch('http://192.168.1.5:5000/api/enquiries', { headers }).then(r => r.ok ? r.json() : []),
-      fetch('http://192.168.1.5:5000/api/wishlist',  { headers }).then(r => r.ok ? r.json() : []),
-      fetch('http://192.168.1.5:5000/api/site-visits', { headers }).then(r => r.ok ? r.json() : []),
-      fetch('http://192.168.1.5:5000/api/properties').then(r => r.ok ? r.json() : []),
+      fetch('https://real-estate-backend-9qqo.onrender.com/api/enquiries', { headers }).then(r => r.ok ? r.json() : []),
+      fetch('https://real-estate-backend-9qqo.onrender.com/api/wishlist',  { headers }).then(r => r.ok ? r.json() : []),
+      fetch('https://real-estate-backend-9qqo.onrender.com/api/site-visits', { headers }).then(r => r.ok ? r.json() : []),
+      fetch('https://real-estate-backend-9qqo.onrender.com/api/properties').then(r => r.ok ? r.json() : []),
     ]).then(([enqs, wish, visits, props]) => {
       setCounts({ enquiries: enqs.length, wishlist: wish.length, siteVisits: visits.length });
       setRecentEnquiries(enqs.slice(0, 4));

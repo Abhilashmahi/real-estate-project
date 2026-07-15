@@ -1,1 +1,1 @@
-export const API_BASE_URL = 'http://192.168.1.5:5000';
+export const API_BASE_URL = 'https://real-estate-backend-9qqo.onrender.com';

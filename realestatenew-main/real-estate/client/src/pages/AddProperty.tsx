@@ -35,7 +35,7 @@ export default function AddProperty() {
 
     const token = localStorage.getItem('token');
     try {
-      const response = await fetch('http://192.168.1.5:5000/api/properties', {
+      const response = await fetch('https://real-estate-backend-9qqo.onrender.com/api/properties', {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',

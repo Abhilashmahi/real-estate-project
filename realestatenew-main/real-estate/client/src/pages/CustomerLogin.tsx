@@ -22,7 +22,7 @@ export default function CustomerLogin({ onLogin }: CustomerLoginProps) {
     setLoading(true);
     setError('');
     try {
-      const response = await fetch('http://192.168.1.5:5000/api/auth/customer/login', {
+      const response = await fetch('https://real-estate-backend-9qqo.onrender.com/api/auth/customer/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),

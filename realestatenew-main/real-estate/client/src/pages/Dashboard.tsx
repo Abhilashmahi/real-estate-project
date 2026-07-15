@@ -60,10 +60,10 @@ export default function Dashboard() {
     try {
       const headers = { 'Authorization': `Bearer ${token}` };
       const [enquiriesRes, siteVisitsRes, summaryRes, propertiesRes] = await Promise.all([
-        fetch('http://192.168.1.5:5000/api/enquiries', { headers }),
-        fetch('http://192.168.1.5:5000/api/site-visits', { headers }),
-        fetch('http://192.168.1.5:5000/api/reports/summary', { headers }),
-        fetch('http://192.168.1.5:5000/api/properties')
+        fetch('https://real-estate-backend-9qqo.onrender.com/api/enquiries', { headers }),
+        fetch('https://real-estate-backend-9qqo.onrender.com/api/site-visits', { headers }),
+        fetch('https://real-estate-backend-9qqo.onrender.com/api/reports/summary', { headers }),
+        fetch('https://real-estate-backend-9qqo.onrender.com/api/properties')
       ]);
 
       if (enquiriesRes.ok) {
@@ -103,7 +103,7 @@ export default function Dashboard() {
 
   const handleConfirmVisit = async (id: number) => {
     try {
-      const r = await fetch(`http://192.168.1.5:5000/api/site-visits/${id}/status`, {
+      const r = await fetch(`https://real-estate-backend-9qqo.onrender.com/api/site-visits/${id}/status`, {
         method: 'PUT',
         headers: { 
           'Content-Type': 'application/json', 

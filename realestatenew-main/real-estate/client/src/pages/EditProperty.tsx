@@ -24,7 +24,7 @@ export default function EditProperty() {
   useEffect(() => {
     const fetchPropertyDetails = async () => {
       try {
-        const response = await fetch(`http://192.168.1.5:5000/api/properties/${id}`);
+        const response = await fetch(`https://real-estate-backend-9qqo.onrender.com/api/properties/${id}`);
         if (response.ok) {
           const data = await response.json();
           setFormData({
@@ -71,7 +71,7 @@ export default function EditProperty() {
 
     const token = localStorage.getItem('token');
     try {
-      const response = await fetch(`http://192.168.1.5:5000/api/properties/${id}`, {
+      const response = await fetch(`https://real-estate-backend-9qqo.onrender.com/api/properties/${id}`, {
         method: 'PUT',
         headers: { 
           'Content-Type': 'application/json',

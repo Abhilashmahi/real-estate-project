@@ -19,7 +19,7 @@ export default function PublicPropertyDetails() {
   useEffect(() => {
     const fetchDetails = async () => {
       try {
-        const response = await fetch(`http://192.168.1.5:5000/api/properties/${id}`);
+        const response = await fetch(`https://real-estate-backend-9qqo.onrender.com/api/properties/${id}`);
         if (response.ok) {
           const data = await response.json();
           setProperty(data);
@@ -44,7 +44,7 @@ export default function PublicPropertyDetails() {
       return;
     }
     try {
-      const response = await fetch('http://192.168.1.5:5000/api/enquiries', {
+      const response = await fetch('https://real-estate-backend-9qqo.onrender.com/api/enquiries', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -75,7 +75,7 @@ export default function PublicPropertyDetails() {
       return;
     }
     try {
-      const response = await fetch('http://192.168.1.5:5000/api/site-visits', {
+      const response = await fetch('https://real-estate-backend-9qqo.onrender.com/api/site-visits', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -107,7 +107,7 @@ export default function PublicPropertyDetails() {
   }
 
   const images = property.images && property.images.length > 0 
-    ? property.images.map((img: any) => img.url.startsWith('http') ? img.url : `http://192.168.1.5:5000/${img.url}`)
+    ? property.images.map((img: any) => img.url.startsWith('http') ? img.url : `https://real-estate-backend-9qqo.onrender.com/${img.url}`)
     : ['https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&auto=format&fit=crop&q=60'];
 
   const amenities = [

@@ -9,7 +9,7 @@ export default function Properties() {
 
   const fetchProperties = async () => {
     try {
-      const response = await fetch('http://192.168.1.5:5000/api/properties');
+      const response = await fetch('https://real-estate-backend-9qqo.onrender.com/api/properties');
       if (response.ok) {
         const data = await response.json();
         setProperties(data);
@@ -29,7 +29,7 @@ export default function Properties() {
     if (!window.confirm('Are you sure you want to delete this property?')) return;
     const token = localStorage.getItem('token');
     try {
-      const response = await fetch(`http://192.168.1.5:5000/api/properties/${id}`, {
+      const response = await fetch(`https://real-estate-backend-9qqo.onrender.com/api/properties/${id}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });
@@ -118,7 +118,7 @@ export default function Properties() {
                       <div style={{ width: '50px', height: '38px', borderRadius: '6px', overflow: 'hidden', border: '1px solid #e2e8f0', background: '#f8fafc', flexShrink: 0 }}>
                         <img 
                           src={item.images?.[0]?.url 
-                            ? (item.images[0].url.startsWith('http') ? item.images[0].url : `http://192.168.1.5:5000/${item.images[0].url}`)
+                            ? (item.images[0].url.startsWith('http') ? item.images[0].url : `https://real-estate-backend-9qqo.onrender.com/${item.images[0].url}`)
                             : 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=100'
                           } 
                           alt="" 

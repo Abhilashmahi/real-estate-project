@@ -374,7 +374,7 @@ export default function Enquiries() {
     const token = localStorage.getItem('token');
     setLoading(true);
     try {
-      const res = await fetch('http://192.168.1.5:5000/api/enquiries', {
+      const res = await fetch('https://real-estate-backend-9qqo.onrender.com/api/enquiries', {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (res.ok) setEnquiries(await res.json());
@@ -400,7 +400,7 @@ export default function Enquiries() {
   const updateStatus = async (id: number, status: string) => {
     const token = localStorage.getItem('token');
     try {
-      const res = await fetch(`http://192.168.1.5:5000/api/enquiries/${id}/status`, {
+      const res = await fetch(`https://real-estate-backend-9qqo.onrender.com/api/enquiries/${id}/status`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ status }),
@@ -419,7 +419,7 @@ export default function Enquiries() {
     if (!dNote.trim() || !drawer) return;
     const token = localStorage.getItem('token');
     try {
-      const res = await fetch(`http://192.168.1.5:5000/api/enquiries/${drawer.id}/status`, {
+      const res = await fetch(`https://real-estate-backend-9qqo.onrender.com/api/enquiries/${drawer.id}/status`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ status: drawer.status, notes: dNote }),
@@ -447,7 +447,7 @@ export default function Enquiries() {
     if (!drawer) return;
     const token = localStorage.getItem('token');
     try {
-      const res = await fetch(`http://192.168.1.5:5000/api/enquiries/${drawer.id}`, {
+      const res = await fetch(`https://real-estate-backend-9qqo.onrender.com/api/enquiries/${drawer.id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify(editForm),
@@ -467,7 +467,7 @@ export default function Enquiries() {
     if (!window.confirm('Permanently delete this lead?')) return;
     const token = localStorage.getItem('token');
     try {
-      const res = await fetch(`http://192.168.1.5:5000/api/enquiries/${id}`, {
+      const res = await fetch(`https://real-estate-backend-9qqo.onrender.com/api/enquiries/${id}`, {
         method: 'DELETE', headers: { Authorization: `Bearer ${token}` },
       });
       if (res.ok) {
@@ -482,7 +482,7 @@ export default function Enquiries() {
   const addEnquiry = async () => {
     const token = localStorage.getItem('token');
     try {
-      const res = await fetch('http://192.168.1.5:5000/api/enquiries', {
+      const res = await fetch('https://real-estate-backend-9qqo.onrender.com/api/enquiries', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ ...addForm, property: addForm.propertyName }),

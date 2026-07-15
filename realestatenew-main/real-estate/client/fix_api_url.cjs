@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const OLD_URLS = ['http://192.168.1.6:5000', 'http://localhost:5000', 'http://127.0.0.1:5000'];
-const NEW_URL = 'http://192.168.1.5:5000';
+const OLD_URLS = ['http://192.168.1.5:5000', 'http://192.168.1.6:5000', 'http://127.0.0.1:5000', 'http://localhost:5000'];
+const NEW_URL = 'https://real-estate-backend-9qqo.onrender.com';
 
 function walkDir(dir, callback) {
   fs.readdirSync(dir).forEach(f => {
@@ -16,7 +16,6 @@ function walkDir(dir, callback) {
   });
 }
 
-// Fix files in src
 const srcPath = path.join(__dirname, 'src');
 walkDir(srcPath, filePath => {
   if (filePath.endsWith('.tsx') || filePath.endsWith('.ts') || filePath.endsWith('.css')) {
@@ -35,7 +34,6 @@ walkDir(srcPath, filePath => {
   }
 });
 
-// Fix vite.config.ts
 const viteConfigPath = path.join(__dirname, 'vite.config.ts');
 if (fs.existsSync(viteConfigPath)) {
   let content = fs.readFileSync(viteConfigPath, 'utf8');
@@ -52,4 +50,4 @@ if (fs.existsSync(viteConfigPath)) {
   }
 }
 
-console.log('✅ Hardcoded URLs updated to 192.168.1.5 successfully!');
+console.log('✅ All URLs updated to Render backend URL!');

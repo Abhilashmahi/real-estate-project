@@ -81,7 +81,7 @@ export default function PremiumUploader({ images, onChange }: PremiumUploaderPro
         });
       }, 150);
 
-      const res = await fetch('http://192.168.1.5:5000/api/upload', {
+      const res = await fetch('https://real-estate-backend-9qqo.onrender.com/api/upload', {
         method: 'POST',
         body: formData
       });
@@ -185,7 +185,7 @@ export default function PremiumUploader({ images, onChange }: PremiumUploaderPro
         const formData = new FormData();
         formData.append('files', files[0]);
         try {
-          const res = await fetch('http://192.168.1.5:5000/api/upload', { method: 'POST', body: formData });
+          const res = await fetch('https://real-estate-backend-9qqo.onrender.com/api/upload', { method: 'POST', body: formData });
           if (res.ok) {
             const data = await res.json();
             const updated = [...images];
@@ -369,7 +369,7 @@ export default function PremiumUploader({ images, onChange }: PremiumUploaderPro
               >
                 {/* Image element */}
                 <img 
-                  src={url.startsWith('http') ? url : `http://192.168.1.5:5000/${url}`} 
+                  src={url.startsWith('http') ? url : `https://real-estate-backend-9qqo.onrender.com/${url}`} 
                   alt={`Property Image ${idx + 1}`} 
                   onClick={() => setPreviewIndex(idx)}
                   style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} 
@@ -455,7 +455,7 @@ export default function PremiumUploader({ images, onChange }: PremiumUploaderPro
           {/* Image Display */}
           <div style={{ width: '80%', height: '70%', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
             <img 
-              src={images[previewIndex].startsWith('http') ? images[previewIndex] : `http://192.168.1.5:5000/${images[previewIndex]}`} 
+              src={images[previewIndex].startsWith('http') ? images[previewIndex] : `https://real-estate-backend-9qqo.onrender.com/${images[previewIndex]}`} 
               alt="Full Preview"
               style={{
                 maxWidth: '100%',

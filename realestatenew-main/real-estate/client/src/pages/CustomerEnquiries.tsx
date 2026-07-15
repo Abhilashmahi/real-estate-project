@@ -9,7 +9,7 @@ export default function CustomerEnquiries() {
   useEffect(() => {
     const fetchEnquiries = async () => {
       try {
-        const response = await fetch('http://192.168.1.5:5000/api/enquiries', {
+        const response = await fetch('https://real-estate-backend-9qqo.onrender.com/api/enquiries', {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         if (response.ok) {

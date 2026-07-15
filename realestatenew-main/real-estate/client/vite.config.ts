@@ -7,7 +7,7 @@ export default defineConfig({
     port: 3000,
     host: true,
     proxy: {
-      '/api': 'http://192.168.1.5:5000'
+      '/api': 'https://real-estate-backend-9qqo.onrender.com'
     }
   }
 })

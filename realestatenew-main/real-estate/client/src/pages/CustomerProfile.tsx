@@ -14,7 +14,7 @@ export default function CustomerProfile() {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const response = await fetch('http://192.168.1.5:5000/api/auth/customer/profile', {
+        const response = await fetch('https://real-estate-backend-9qqo.onrender.com/api/auth/customer/profile', {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         if (response.ok) {
@@ -49,7 +49,7 @@ export default function CustomerProfile() {
     }
 
     try {
-      const response = await fetch('http://192.168.1.5:5000/api/auth/customer/profile', {
+      const response = await fetch('https://real-estate-backend-9qqo.onrender.com/api/auth/customer/profile', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

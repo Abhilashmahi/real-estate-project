@@ -33,7 +33,7 @@ export default function FollowUps() {
   const fetchFollowups = async () => {
     const token = localStorage.getItem('token');
     try {
-      const response = await fetch('http://192.168.1.5:5000/api/followups', {
+      const response = await fetch('https://real-estate-backend-9qqo.onrender.com/api/followups', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (response.ok) {
@@ -57,7 +57,7 @@ export default function FollowUps() {
   const handleToggleComplete = async (id: number) => {
     const token = localStorage.getItem('token');
     try {
-      const response = await fetch(`http://192.168.1.5:5000/api/followups/${id}/toggle`, {
+      const response = await fetch(`https://real-estate-backend-9qqo.onrender.com/api/followups/${id}/toggle`, {
         method: 'PUT',
         headers: { 'Authorization': `Bearer ${token}` }
       });
@@ -87,7 +87,7 @@ export default function FollowUps() {
   const handleSaveEdit = async (id: number) => {
     const token = localStorage.getItem('token');
     try {
-      const response = await fetch(`http://192.168.1.5:5000/api/followups/${id}`, {
+      const response = await fetch(`https://real-estate-backend-9qqo.onrender.com/api/followups/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -118,7 +118,7 @@ export default function FollowUps() {
     if (!window.confirm('Are you sure you want to delete this follow-up schedule? The parent enquiry status will revert back.')) return;
     const token = localStorage.getItem('token');
     try {
-      const response = await fetch(`http://192.168.1.5:5000/api/followups/${id}`, {
+      const response = await fetch(`https://real-estate-backend-9qqo.onrender.com/api/followups/${id}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });

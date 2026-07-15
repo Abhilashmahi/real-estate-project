@@ -25,7 +25,7 @@ export default function CustomerDetails() {
     const fetchEnquiryDetails = async () => {
       const token = localStorage.getItem('token');
       try {
-        const response = await fetch(`http://192.168.1.5:5000/api/enquiries/${id}`, {
+        const response = await fetch(`https://real-estate-backend-9qqo.onrender.com/api/enquiries/${id}`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         if (response.ok) {
@@ -69,7 +69,7 @@ export default function CustomerDetails() {
     const token = localStorage.getItem('token');
     try {
       // 1. Update enquiry details
-      const response = await fetch(`http://192.168.1.5:5000/api/enquiries/${id}`, {
+      const response = await fetch(`https://real-estate-backend-9qqo.onrender.com/api/enquiries/${id}`, {
         method: 'PUT',
         headers: { 
           'Content-Type': 'application/json',
@@ -91,7 +91,7 @@ export default function CustomerDetails() {
 
       // 2. If a next follow-up date is set, create a Follow-up record
       if (formData.nextFollowUp) {
-        const fResponse = await fetch('http://192.168.1.5:5000/api/followups', {
+        const fResponse = await fetch('https://real-estate-backend-9qqo.onrender.com/api/followups', {
           method: 'POST',
           headers: { 
             'Content-Type': 'application/json',

@@ -13,7 +13,7 @@ export default function CustomerSiteVisits() {
 
   const fetchVisits = async () => {
     try {
-      const response = await fetch('http://192.168.1.5:5000/api/site-visits', {
+      const response = await fetch('https://real-estate-backend-9qqo.onrender.com/api/site-visits', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (response.ok) {
@@ -27,7 +27,7 @@ export default function CustomerSiteVisits() {
 
   const fetchProperties = async () => {
     try {
-      const response = await fetch('http://192.168.1.5:5000/api/properties');
+      const response = await fetch('https://real-estate-backend-9qqo.onrender.com/api/properties');
       if (response.ok) {
         const data = await response.json();
         setProperties(data);
@@ -51,7 +51,7 @@ export default function CustomerSiteVisits() {
     e.preventDefault();
     if (!propertyId || !visitDate) return;
     try {
-      const response = await fetch('http://192.168.1.5:5000/api/site-visits', {
+      const response = await fetch('https://real-estate-backend-9qqo.onrender.com/api/site-visits', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

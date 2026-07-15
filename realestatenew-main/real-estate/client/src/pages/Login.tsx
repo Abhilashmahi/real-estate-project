@@ -16,7 +16,7 @@ export default function Login({ onLogin }: LoginProps) {
     setLoading(true);
     setError('');
     try {
-      const response = await fetch('http://192.168.1.5:5000/api/auth/admin/login', {
+      const response = await fetch('https://real-estate-backend-9qqo.onrender.com/api/auth/admin/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),

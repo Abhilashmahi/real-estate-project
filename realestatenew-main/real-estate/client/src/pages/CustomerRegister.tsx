@@ -35,7 +35,7 @@ export default function CustomerRegister() {
     if (!validate()) return;
     setLoading(true);
     try {
-      const response = await fetch('http://192.168.1.5:5000/api/auth/customer/register', {
+      const response = await fetch('https://real-estate-backend-9qqo.onrender.com/api/auth/customer/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ fullName: formData.name, email: formData.email, mobile: formData.phone, password: formData.password }),

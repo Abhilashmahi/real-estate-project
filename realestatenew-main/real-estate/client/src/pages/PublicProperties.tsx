@@ -19,7 +19,7 @@ export default function PublicProperties() {
       if (location) params.set('location', location);
       if (type !== 'All') params.set('type', type);
       if (maxPrice) params.set('maxPrice', maxPrice);
-      const res = await fetch(`http://192.168.1.5:5000/api/properties?${params}`);
+      const res = await fetch(`https://real-estate-backend-9qqo.onrender.com/api/properties?${params}`);
       if (res.ok) setProperties(await res.json());
     } catch { /* silent */ } finally { setLoading(false); }
   };
@@ -27,7 +27,7 @@ export default function PublicProperties() {
   const fetchWishlist = async () => {
     if (!token || user?.role !== 'customer') return;
     try {
-      const res = await fetch('http://192.168.1.5:5000/api/wishlist', { headers: { 'Authorization': `Bearer ${token}` } });
+      const res = await fetch('https://real-estate-backend-9qqo.onrender.com/api/wishlist', { headers: { 'Authorization': `Bearer ${token}` } });
       if (res.ok) {
         const data = await res.json();
         setWishlistIds(data.map((i: any) => i.propertyId || i.id));
@@ -48,10 +48,10 @@ export default function PublicProperties() {
     const isFav = wishlistIds.includes(propertyId);
     try {
       if (isFav) {
-        const r = await fetch(`http://192.168.1.5:5000/api/wishlist/${propertyId}`, { method: 'DELETE', headers: { 'Authorization': `Bearer ${token}` } });
+        const r = await fetch(`https://real-estate-backend-9qqo.onrender.com/api/wishlist/${propertyId}`, { method: 'DELETE', headers: { 'Authorization': `Bearer ${token}` } });
         if (r.ok) setWishlistIds(prev => prev.filter(id => id !== propertyId));
       } else {
-        const r = await fetch('http://192.168.1.5:5000/api/wishlist', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` }, body: JSON.stringify({ propertyId }) });
+        const r = await fetch('https://real-estate-backend-9qqo.onrender.com/api/wishlist', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` }, body: JSON.stringify({ propertyId }) });
         if (r.ok) setWishlistIds(prev => [...prev, propertyId]);
       }
     } catch { /* silent */ }
@@ -205,7 +205,7 @@ export default function PublicProperties() {
             const isAvailable = item.status !== 'Sold';
             const rawImg = item.images?.[0]?.url || '';
             const coverImage = rawImg
-              ? (rawImg.startsWith('http') ? rawImg : `http://192.168.1.5:5000/${rawImg}`)
+              ? (rawImg.startsWith('http') ? rawImg : `https://real-estate-backend-9qqo.onrender.com/${rawImg}`)
               : 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&auto=format&fit=crop&q=60';
             return (
               <div key={item.id} style={{

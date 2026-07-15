@@ -10,7 +10,7 @@ export default function Home() {
   const [searchType, setSearchType] = useState('All');
 
   useEffect(() => {
-    fetch('http://192.168.1.5:5000/api/properties')
+    fetch('https://real-estate-backend-9qqo.onrender.com/api/properties')
       .then(r => r.ok ? r.json() : [])
       .then((data: any[]) => setPropCount(data.length))
       .catch(() => {});
